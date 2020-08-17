@@ -1,0 +1,51 @@
+// student grading system
+
+#include<stdio.h>
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+	
+char grade,name[40];
+int a,b,c,sum=0,roll_no;
+float perc;
+	
+start:
+printf("\n\t\tgrading system");
+printf("\n\t\t**************\n");
+printf("enter the name of student \n");
+scanf("%s",name);
+printf("enter the roll no.: ");
+scanf("%d",&roll_no);
+printf("enter the marks: \n");
+scanf("%d%d%d",&a,&b,&c);
+sum= a+b+c;
+perc= (float)sum*100/300;
+			
+printf("\nname of the student is: %s",name);
+printf("\nroll no : %d",roll_no);
+printf("\nmarks in the three subjects are: %d %d %d",a,b,c);
+printf("\ntotal marks are : %d\n\t\t",sum);
+printf("\npercentage= %5.2f",perc);
+if(perc>85 || perc== 100)
+	grade='A';
+else if(perc>70 && perc<84)
+	grade='B';
+else if(perc>55 && perc<69)
+	grade='C';
+else if(perc>40 && perc<54)	
+	grade='D';
+else
+	grade='F';
+	
+printf("\ngrade= %c",grade);
+
+char ch;
+printf("\nwant more..?? choose(y/n)\n");
+scanf("\n%ch",&ch);
+if(ch=='y' || ch=='Y')
+	goto start;
+else
+	return 0;			
+}
